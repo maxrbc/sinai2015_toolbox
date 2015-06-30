@@ -6,4 +6,6 @@ psycopg2==2.6
 SQLAlchemy==1.0.4
 whitenoise==1.0.6
 pandas== 0.16.2
+numpy==1.9.2
+scipy==0.15.1
 https://github.com/google/google-visualization-python/zipball/master
