@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+{% load staticfiles %}
+<head>
+	<title>Temporal Series</title>
+        <!-- Latest compiled and minified CSS  and Optional style -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+		<link rel="stylesheet" href="{% static 'css/page_styles.css' %}">
+</head>
+<body>
+
+	<div class='container-fluid bg-success'>
+		<div class='jumbotron inv-bg-jumbotron'>
+				<h1 class="text-center">SURP 2015 Toolbox</h1>
+		</div>
+	</div>
+
+	<div class="container-fluid" >
+				<br>
+        <div class='row'>
+					<div class="col-xs-12 col-md-12 col-lg-6">
+						<form action='ts/load_table' method=''>
+							<div class ="btn-motion_chart">
+							</div>
+							<div class='btn temporal-button-position'>
+								<button class='btn ts-button'><h1>Temporal Series APP</h1></button>
+							</div>
+						</form>
+					</div>
+
+
+					<div class="col-xs-12 col-md-12 col-lg-6">
+						<form action='#' method=''>
+	        	   <div>
+								<div class="btn btn-circos_chart">
+								</div>
+								<div class="btn temporal-button-position">
+									<button class='btn ts-button'><h1>Circos APP</h1></button>
+								</div>
+							</div>
+						</form>
+					</div>
+        </div>
+    </div>
+
+
+
+     <!--JQuery for the bootstrap magic to work  & Latest compiled and minified JavaScript -->
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,67 @@
+/*
+====================
+Text On image
+====================
+*/
+.temporal-series-text
+{
+position: relative;
+top: -280px;
+left: 80px;
+opacity: 1.0;
+}
+
+.In-img-text:hover
+{
+opacity: 1.0;
+}
+
+/*
+====================
+Button Image Background
+====================
+*/
+
+.btn-motion_chart
+{
+height: 400px;
+width: 600px;
+opacity: 0.6;
+background-image: url('static/images/419.jpg');
+}
+
+.btn-circos_chart
+{
+height: 414px;
+width: 600px;
+opacity: 0.4;
+background-color: #7a7a7a;
+}
+
+.btn-circos_chart:hover
+{
+opacity: 0.4;
+
+}
+/*
+====================
+		Header
+====================
+*/
+.inv-bg-jumbotron
+{
+background-color: transparent;
+}
+
+.my_button
+{
+background-color: #7a7a7a;
+opacity: 0.0;
+transition: 1s;
+}
+
+.my_button:hover
+{
+opacity: 1.0;
+transition: 2s;
+}
