@@ -12,7 +12,8 @@ os.environ.setdefault("DJANGO_SETTINGS_MODULE", "testpage.settings")
 
 from django.core.wsgi import get_wsgi_application
 from whitenoise.django import DjangoWhiteNoise
+from django.conf import settings
 
 
 application = get_wsgi_application()
-application = DjangoWhiteNoise(application)
+application = DjangoWhiteNoise(application , root=settings.STATIC_ROOT)
