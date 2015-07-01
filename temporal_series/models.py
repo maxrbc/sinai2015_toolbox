@@ -14,7 +14,7 @@ class Graph(models.Model):
 	def get_graph(self , timevar_type , na_complition):
 
 		## Table uploading and selection
-		table = tp("/tmp/table_upload.txt")
+		table = tp("static/media/table_upload.txt")
 
 		if timevar_type == '0':
 

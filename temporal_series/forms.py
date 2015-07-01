@@ -7,8 +7,9 @@ class SubmitTable(forms.Form):
 	table_idVar = forms.CharField(label='table_idVar'  , required = True)
 
 	## For selection of the form parsing for the Dates
-	TIMEPOINT_CHOICES = ((0,'Discrete Form ') ,
-						 (1, 'Continuous Form '))
+	TIMEPOINT_CHOICES = ((1,'Continuous Form'),
+						 (0,'Discrete Form'))
+
 	COMPLITION_METHODS= (('bfill' , "Use Previous Field"),
 						 ('ffill' , "Use Next Field") ,
 						 ('inter' , "Use Linear Interpolation"))

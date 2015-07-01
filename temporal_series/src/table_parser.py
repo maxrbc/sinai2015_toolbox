@@ -13,7 +13,7 @@ class Table_Parser():
 
 		if os.path.exists(table_fp):
 			self.table = read_table(table_fp)
-		else: 
+		else:
 			raise IOError("Table does not exist! \n"+os.getcwd())
 
 
@@ -38,12 +38,12 @@ class Table_Parser():
 		result.extend(t)
 
 		return result
-		
+
 
 	def generate_description(self):
 		results = {}
 		k_v = {}
-		
+
 		data_types = {
 		str : 'string',
 		int : 'number',
@@ -57,14 +57,14 @@ class Table_Parser():
 
 
 		for k,v in k_v.iteritems():
-			if k == self.timevar : 
+			if k == self.timevar :
 				results[k] = ('date' , k)
 			elif v == basestring or k == self.idVar:
 				results[k] = ( 'string' , k)
 			else:
 				results[k] = (data_types[v], k)
 
-		return results	
+		return results
 
 	def generate_data(self):
 		a = self.table.to_dict()
@@ -77,12 +77,12 @@ class Table_Parser():
 				if k == self.timevar:
 					t = v[i].split("-")
 					##print "> %(t1)s , %(t2)s , %(t3)s \n" % {'t1': t[0], 't2' : t[1] , 't3': t[2]}
-					
-					### this so far assumes the timevar is formated for date and not as 
-					### timepoint ... should be done in next revision of application. 
+
+					### this so far assumes the timevar is formated for date and not as
+					### timepoint ... should be done in next revision of application.
 					line[k] = date(int(t[0]),int(t[1]) ,int(t[2]))
-					
-				else: 
+
+				else:
 					line[k] = v[i]
 			result.append(line)
 		return result
@@ -90,7 +90,7 @@ class Table_Parser():
 
 def DebugOutput():
 
-	table_fp = "R.adiv_taxa_pc.txt" 
+	table_fp = "R.adiv_taxa_pc.txt"
 	table = Table_Parser(table_fp)
 	table.set_timevar('timepoint_date')
 	table.set_IdVar('subjectID')
@@ -112,6 +112,3 @@ def DebugOutput():
 
 if __name__ == "__main__":
 	DebugOutput()
-
-
-	

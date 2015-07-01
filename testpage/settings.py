@@ -110,7 +110,7 @@ USE_TZ = True
 
 ## ================================================
 
-        #Heroku Config  
+        #Heroku Config
 ## ================================================
 
 # Parse database configuration from $DATABASE_URL
@@ -134,6 +134,7 @@ STATIC_URL = '/static/'
 
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
+    os.path.join(BASE_DIR , 'temporal_series' , 'static')
 )
 
 # Simplified static file serving.
