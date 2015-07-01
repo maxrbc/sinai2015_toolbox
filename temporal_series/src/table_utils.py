@@ -9,7 +9,7 @@ def table_loader(FILE):
 	## On debug mode code
 	if (os.path.exists(settings.BASE_DIR)):
 
-		with open("~/temporal_series/table_upload.txt" , "wb+") as destination:
+		with open("~/temporal_series/media/table_upload.txt" , "wb+") as destination:
 			for chunk in FILE.chunks():
 				destination.write(chunk)
 	else :
