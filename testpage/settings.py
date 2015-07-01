@@ -137,7 +137,7 @@ MEDIA_URL = '/media/'
 
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR , 'temporal_series' , 'media'),
-    os.path.join(BASE_DIR , 'temporal_series' , 'static')
+    os.path.join(BASE_DIR , 'temporal_series' , 'static'),
 )
 
 # Simplified static file serving.
