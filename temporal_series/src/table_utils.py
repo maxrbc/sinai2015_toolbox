@@ -5,7 +5,7 @@ from datetime import date , timedelta
 
 def table_loader(FILE):
 	import os
-	print os.getcwd()
+	CURR_PATH = os.getcwd()
 	with open("static/media/table_upload.txt" , "wb+") as destination:
 		for chunk in FILE.chunks():
 			destination.write(chunk)
