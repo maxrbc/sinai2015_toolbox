@@ -7,13 +7,13 @@ from django.conf import settings
 def table_loader(FILE):
 	import os
 	## On debug mode code
-	if (os.path.exists(settings.MEDIA_ROOT)):
-		CURR_PATH = os.getcwd()
-		with open(settings.MEDIA_ROOT+"/table_upload.txt" , "wb+") as destination:
+	if (os.path.exists(settings.BASE_DIR)):
+
+		with open(settings.BASE_DIR+"/temporal_series/table_upload.txt" , "wb+") as destination:
 			for chunk in FILE.chunks():
 				destination.write(chunk)
 	else :
-		raise IOError("media isnt found here!")
+		raise IOError("No base dir found here!?")
 
 def generate_cluster_index(dates):
 	result = []
