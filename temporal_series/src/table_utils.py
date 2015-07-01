@@ -5,11 +5,15 @@ from django.conf import settings
 # still need to be added version for the biom table
 
 def table_loader(FILE):
-	import os
-	CURR_PATH = os.getcwd()
-	with open(settings.MEDIA_ROOT+"/table_upload.txt" , "wb+") as destination:
-		for chunk in FILE.chunks():
-			destination.write(chunk)
+	## On debug mode code
+	if (os.path.exists(settings.MEDIA_ROOT)):
+		import os
+		CURR_PATH = os.getcwd()
+		with open(settings.MEDIA_ROOT+"/table_upload.txt" , "wb+") as destination:
+			for chunk in FILE.chunks():
+				destination.write(chunk)
+	else :
+		raise IOError("media isnt found here!")
 
 def generate_cluster_index(dates):
 	result = []
