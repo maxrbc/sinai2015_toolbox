@@ -15,7 +15,7 @@ class Graph(models.Model):
 
 		## Table uploading and selection
 		import os
-		table = tp(os.getcwd()+"/testapage/temporal_series/static/media/table_upload.txt")
+		table = tp(os.getcwd()+"/temporal_series/static/media/table_upload.txt")
 
 		if timevar_type == '0':
 
