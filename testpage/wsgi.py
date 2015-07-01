@@ -16,4 +16,4 @@ from django.conf import settings
 
 
 application = get_wsgi_application()
-application = DjangoWhiteNoise(application , root=settings.STATIC_ROOT)
+application = DjangoWhiteNoise(application)
