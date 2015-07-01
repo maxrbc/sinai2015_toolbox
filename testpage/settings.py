@@ -129,10 +129,10 @@ ALLOWED_HOSTS = ['*']
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-STATIC_ROOT = 'staticfiles'
+STATIC_ROOT = os.path.join(BASE_DIR ,'staticfiles')
 STATIC_URL = '/static/'
 
-MEDIA_ROOT = 'media'
+MEDIA_ROOT = os.path.join(BASE_DIR , 'media')
 MEDIA_URL = '/media/'
 
 STATICFILES_DIRS = (
