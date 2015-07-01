@@ -6,7 +6,7 @@ from datetime import date , timedelta
 def table_loader(FILE):
 	import os
 	CURR_PATH = os.getcwd()
-	with open(CURR_PATH+"testapage/temporal_series/static/media/table_upload.txt" , "wb+") as destination:
+	with open(CURR_PATH+"/testapage/temporal_series/static/media/table_upload.txt" , "wb+") as destination:
 		for chunk in FILE.chunks():
 			destination.write(chunk)
 
