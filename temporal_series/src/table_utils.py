@@ -1,4 +1,5 @@
 from datetime import date , timedelta
+from django.conf import settings
 
 # Table loader only works for saving right now a txt
 # still need to be added version for the biom table
@@ -6,7 +7,7 @@ from datetime import date , timedelta
 def table_loader(FILE):
 	import os
 	CURR_PATH = os.getcwd()
-	with open("staticfiles/media/table_upload.txt" , "wb+") as destination:
+	with open(settings.MEDIA_ROOT+"/table_upload.txt" , "wb+") as destination:
 		for chunk in FILE.chunks():
 			destination.write(chunk)
 
