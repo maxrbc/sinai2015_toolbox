@@ -4,6 +4,8 @@ from datetime import date , timedelta
 # still need to be added version for the biom table
 
 def table_loader(FILE):
+	import os
+	print os.getcwd()
 	with open("static/media/table_upload.txt" , "wb+") as destination:
 		for chunk in FILE.chunks():
 			destination.write(chunk)
