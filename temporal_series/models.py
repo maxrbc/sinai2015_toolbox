@@ -15,8 +15,9 @@ class Graph(models.Model):
 
 		## Table uploading and selection
 		import os
+		from django.conf import settings
 
-		table = tp("/staticfiles/media/table_upload.txt")
+		table = tp(settings.MEDIA_ROOT+"/table_upload.txt")
 
 		if timevar_type == '0':
 
