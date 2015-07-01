@@ -5,9 +5,9 @@ from django.conf import settings
 # still need to be added version for the biom table
 
 def table_loader(FILE):
+	import os
 	## On debug mode code
 	if (os.path.exists(settings.MEDIA_ROOT)):
-		import os
 		CURR_PATH = os.getcwd()
 		with open(settings.MEDIA_ROOT+"/table_upload.txt" , "wb+") as destination:
 			for chunk in FILE.chunks():
