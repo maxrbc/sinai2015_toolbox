@@ -69,7 +69,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'testpage.wsgi.application'
+WSGI_APPLICATION = 'sinai2015_toolbox.wsgi.application'
 
 
 # Database
