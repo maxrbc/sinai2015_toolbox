@@ -1,7 +1,16 @@
 from django.db import models
 import gviz_api
 
-# Create your models here.
+## ==================
+## Path manage 
+## ==================
+
+import os
+from django.conf import settings
+
+## ========================
+## SRC classes implementation 
+## ========================
 from .src.table_parser import Table_Parser as tp
 from .src.table_utils import convert_timepoint_to_date as convert
 from .src.filling_na import fill_na_in_table as fill_na
@@ -78,6 +87,6 @@ class Graph(models.Model):
   </body>
 </html>
 		'''
-		document = open("temporal_series/templates/ts/graph.html" , "w")
+		document = open(settings.BASE_DIR+"/temporal_series/templates/ts/graph.html" , "w")
 		document.write(templ % {'code' : code})
 		document.close()

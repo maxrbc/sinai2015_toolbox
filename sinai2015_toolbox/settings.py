@@ -51,7 +51,7 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.security.SecurityMiddleware',
 )
 
-ROOT_URLCONF = 'testpage.urls'
+ROOT_URLCONF = 'sinai2015_toolbox.urls'
 
 TEMPLATES = [
     {
@@ -121,7 +121,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
-BASE_DIR = os.getcwd()
+
 
 STATIC_ROOT = os.path.join(BASE_DIR ,'staticfiles')
 STATIC_URL = '/static/'
