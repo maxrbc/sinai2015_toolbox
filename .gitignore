@@ -65,3 +65,5 @@ target/
 ## Static folder 
 
 staticfiles/
+
+.spyderworkspace
