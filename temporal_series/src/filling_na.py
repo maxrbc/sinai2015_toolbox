@@ -9,8 +9,10 @@ def making_random_na_test_column(table):
                     random_sample(len(table.values)))
     return result
 
-def fill_na_in_table(table ,sample_id , method = 'ffill'):
-    result = table.copy().groupby(sample_id)
+def fill_na_in_table(table ,subjects_id , method = 'ffill'):
+    #need to recover later the samples subjectsID
+    subjects = table[subjects_id]
+    result = table.copy().groupby(subjects_id)
 
     if method == 'ffill' :
         result = result.ffill()
@@ -29,7 +31,8 @@ def fill_na_in_table(table ,sample_id , method = 'ffill'):
         print "Unknown format ... \n"
         print "Should be on of this : \n"
         print " foward_fill : ffill , \n backward_fill : bfill \n , interpolate : interfill \n"
-
+    
+    result[subjects_id] = subjects
     return result
 
 def determine_if_na(table):
