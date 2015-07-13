@@ -41,7 +41,7 @@ class Graph(models.Model):
 
 		## Filling NA based on the argument send from
 		## the web page form
-		table.set_table(fill_na(table.get_table() , na_complition))
+		table.set_table(fill_na(table.get_table() ,self.subjectID, na_complition))
 
 		## Table Google Vis data
 		description = table.generate_description()
