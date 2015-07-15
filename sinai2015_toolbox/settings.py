@@ -12,7 +12,6 @@ https://docs.djangoproject.com/en/1.8/ref/settings/
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
-import dj_database_url
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -52,7 +51,7 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.security.SecurityMiddleware',
 )
 
-ROOT_URLCONF = 'testpage.urls'
+ROOT_URLCONF = 'sinai2015_toolbox.urls'
 
 TEMPLATES = [
     {
@@ -70,7 +69,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'testpage.wsgi.application'
+WSGI_APPLICATION = 'sinai2015_toolbox.wsgi.application'
 
 
 # Database
@@ -98,43 +97,41 @@ USE_L10N = True
 USE_TZ = True
 
 
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/1.8/howto/static-files/
-
-# STATIC_URL = '/static/'
-# STATIC_ROOT = os.path.join(BASE_DIR , 'static')
-# STATICFILES_DIRS = (
-#         os.path.join(BASE_DIR,'temporal_series' , 'static'),
-#     )
-
-
-## ================================================
-
-        #Heroku Config
-## ================================================
-
-# Parse database configuration from $DATABASE_URL
-DATABASES['default'] =  dj_database_url.config()
-
-# Enable Connection Pooling (if desired)
-DATABASES['default']['ENGINE'] = 'django_postgrespool'
-
-# Honor the 'X-Forwarded-Proto' header for request.is_secure()
-SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
-
-# Allow all host headers
-ALLOWED_HOSTS = ['*']
+#
+# ## ================================================
+#
+#         #Heroku Config
+# ## ================================================
+# #import dj_database_url
+#
+# # Parse database configuration from $DATABASE_URL
+# DATABASES['default'] =  dj_database_url.config()
+#
+# # Enable Connection Pooling (if desired)
+# DATABASES['default']['ENGINE'] = 'django_postgrespool'
+#
+# # Honor the 'X-Forwarded-Proto' header for request.is_secure()
+# SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+#
+# # Allow all host headers
+# ALLOWED_HOSTS = ['*']
+#
+# ## ================================================
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-STATIC_ROOT = 'staticfiles'
+
+
+STATIC_ROOT = os.path.join(BASE_DIR ,'staticfiles')
 STATIC_URL = '/static/'
 
+MEDIA_ROOT = os.path.join(STATIC_ROOT , 'media')
+MEDIA_URL = '/media/'
+
 STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'static'),
-    os.path.join(BASE_DIR , 'temporal_series' , 'static')
+    #os.path.join(BASE_DIR , 'temporal_series' , 'media'),
+    os.path.join(BASE_DIR , 'temporal_series' , 'static'),
 )
 
 # Simplified static file serving.

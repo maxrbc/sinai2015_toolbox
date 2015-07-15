@@ -1,7 +1,16 @@
 from django.db import models
 import gviz_api
 
-# Create your models here.
+## ==================
+## Path manage 
+## ==================
+
+import os
+from django.conf import settings
+
+## ========================
+## SRC classes implementation 
+## ========================
 from .src.table_parser import Table_Parser as tp
 from .src.table_utils import convert_timepoint_to_date as convert
 from .src.filling_na import fill_na_in_table as fill_na
@@ -14,7 +23,10 @@ class Graph(models.Model):
 	def get_graph(self , timevar_type , na_complition):
 
 		## Table uploading and selection
-		table = tp("static/media/table_upload.txt")
+		import os
+		from django.conf import settings
+
+		table = tp(settings.MEDIA_ROOT+"/table_upload.txt")
 
 		if timevar_type == '0':
 
@@ -29,7 +41,7 @@ class Graph(models.Model):
 
 		## Filling NA based on the argument send from
 		## the web page form
-		table.set_table(fill_na(table.get_table() , na_complition))
+		table.set_table(fill_na(table.get_table() ,self.subjectID, na_complition))
 
 		## Table Google Vis data
 		description = table.generate_description()
@@ -75,6 +87,6 @@ class Graph(models.Model):
   </body>
 </html>
 		'''
-		document = open("temporal_series/templates/ts/graph.html" , "w")
+		document = open(settings.BASE_DIR+"/temporal_series/templates/ts/graph.html" , "w")
 		document.write(templ % {'code' : code})
 		document.close()
